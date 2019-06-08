@@ -2,7 +2,6 @@
 
 import hashlib
 import json
-from textwrap import dedent
 from time import time
 from uuid import uuid4
 
@@ -18,12 +17,6 @@ class Blockchain(object):
         self.new_block(previous_hash=1, proof=100)
 
     def new_block(self, proof, previous_hash=None):
-        """
-        ブロックチェーンに新しいブロックを作る
-        :param proof: <int> プルーフ・オブ・ワークアルゴリズムから得られるプルーフ
-        :param previous_hash: (オプション) <str> 前のブロックのハッシュ
-        :return: <dict> 新しいブロック
-        """
         block = {
             'index': len(self.chain) + 1,
             'timestamp': time(),
